@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+- g++
+install:
+- sudo pip install codecov
+
+script:
+    make
+    make test
+    make gcov
+
+after_success:
+    - codecov -t 77fcac81-bddf-4a81-9aca-cf5646f0e818 -X gcov
